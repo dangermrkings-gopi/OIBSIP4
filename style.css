@@ -1,0 +1,244 @@
+*{
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+
+body{
+
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #14001f,
+        #001f3f,
+        #30002f
+    );
+
+}
+
+
+/* magical moving background */
+
+.magic-background{
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    background:
+    radial-gradient(
+        circle,
+        #ff00ff,
+        transparent 60%
+    );
+
+    animation:
+    rotateMagic 8s infinite linear;
+
+    filter:blur(80px);
+
+}
+
+
+@keyframes rotateMagic{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+
+.calculator{
+
+    width:380px;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    background:
+
+    rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+
+    0 0 40px #00ffff;
+
+    z-index:2;
+
+}
+
+
+
+/* animated title */
+
+.magic-title{
+
+    text-align:center;
+
+    color:white;
+
+    letter-spacing:3px;
+
+    animation:
+
+    magicText 2s infinite alternate;
+
+}
+
+
+
+@keyframes magicText{
+
+    from{
+
+        text-shadow:
+        0 0 5px cyan,
+        0 0 15px cyan;
+
+        transform:scale(1);
+
+    }
+
+
+    to{
+
+        text-shadow:
+        0 0 20px magenta,
+        0 0 40px violet;
+
+        transform:scale(1.08);
+
+    }
+
+}
+
+
+
+
+.display{
+
+    height:90px;
+
+    background:black;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    margin-bottom:20px;
+
+    text-align:right;
+
+}
+
+
+#previous{
+
+    color:#aaa;
+
+    font-size:18px;
+
+}
+
+
+#current{
+
+    font-size:35px;
+
+}
+
+
+
+
+.buttons{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+    gap:12px;
+
+}
+
+
+
+button{
+
+    height:60px;
+
+    border:none;
+
+    border-radius:15px;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    color:white;
+
+
+    background:
+
+    linear-gradient(
+        145deg,
+        #6a00ff,
+        #00ffff
+    );
+
+
+    transition:.3s;
+
+}
+
+
+
+button:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.08);
+
+
+    box-shadow:
+
+    0 0 20px white;
+
+}
+
+
+
+button:active{
+
+    transform:scale(.9);
+
+}
+
+
+
+
+.span-two{
+
+    grid-column:span 2;
+
+}
